@@ -1,0 +1,14 @@
+<input type="text" name="server" [(ngModel)]="server">
+<input type="text" name="port" [(ngModel)]="port">
+<input type="text" name="DBname" [(ngModel)]="dbname">
+<input type="text" name="schema" [(ngModel)]="schema">
+<hr>
+<p></p>
+<i style="color: grey">jdbc:postgresql://{{server}}:{{port}}/{{dbname}}?currentSchema={{schema}}</i>
+<p></p>
+<a href="jdbc:postgresql://{{server}}:{{port}}/{{dbname}}?currentSchema={{schema}}">
+  <button
+    class="btn-primary">
+    Test connection
+  </button>
+</a>

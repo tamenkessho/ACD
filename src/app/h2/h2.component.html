@@ -1,0 +1,13 @@
+<input type="text" name="server" [(ngModel)]="server">
+<input type="text" name="port" [(ngModel)]="port">
+<input type="text" name="DBname" [(ngModel)]="dbname">
+<hr>
+<p></p>
+<i style="color: grey">jdbc:h2:tcp://{{server}}:{{port}}/{{dbname}}</i>
+<p></p>
+<a href="jdbc:h2:tcp://{{server}}:{{port}}/{{dbname}}">
+  <button
+    class="btn-primary">
+    Test connection
+  </button>
+</a>

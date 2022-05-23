@@ -1,0 +1,13 @@
+<input type="text" name="server" [(ngModel)]="server">
+<input type="text" name="port" [(ngModel)]="port">
+<input type="text" name="schema" [(ngModel)]="schema">
+<hr>
+<p></p>
+<i style="color: grey">jdbc:as400://{{server}}:{{port}}/{{schema}}</i>
+<p></p>
+<a href="jdbc:as400://{{server}}:{{port}}/{{schema}}">
+  <button
+    class="btn-primary">
+    Test connection
+  </button>
+</a>

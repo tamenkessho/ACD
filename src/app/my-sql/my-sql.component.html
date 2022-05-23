@@ -1,0 +1,14 @@
+<input [(ngModel)]="server" name="server" type="text">
+<input [(ngModel)]="port" name="port" type="text">
+<input [(ngModel)]="schema" name="schema" type="text">
+<hr>
+<p></p>
+<i style="color: grey">jdbc:mysql://{{server}}:{{port}}/{{schema}}?allowMultipleQueries=true</i>
+<p></p>
+<a href="jdbc:mysql://{{server}}:{{port}}/{{schema}}?allowMultipleQueries=true">
+  <button
+    class="btn-primary">
+    Test connection
+  </button>
+</a>
+

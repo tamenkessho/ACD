@@ -1,0 +1,57 @@
+<div
+  class="additional">
+  Additional options
+  <input
+    [(ngModel)]="additionalOptions"
+    type="checkbox">
+  <form #thing="ngForm">
+    <p></p>
+    <fieldset
+      *ngIf="additionalOptions">
+      <legend>Connect</legend>
+      <input
+        [(ngModel)]="currentStatus"
+        name="mssql"
+        type="radio"
+        value="single"
+      >
+      Single Instance
+      <input
+        [(ngModel)]="currentStatus"
+        name="mssql"
+        type="radio"
+        value="multiple"
+      >
+      Multiple Instances
+    </fieldset>
+    <h2></h2>
+    <input [(ngModel)]="server" name="server" type="text">
+    <input [(ngModel)]="port" name="port" type="text">
+    <p></p>
+    <hr>
+  </form>
+  <p></p>
+  <div *ngIf="currentStatus==='single'">
+    <i
+      style="color: grey">jdbc:sqlserver://{{server}}:{{port}}</i>
+    <p></p>
+    <a href="jdbc:sqlserver://{{server}}:{{port}}">
+      <button
+        class="btn-primary">
+        Test connection
+      </button>
+    </a>
+  </div>
+
+  <div *ngIf="currentStatus==='multiple'">
+    <i
+      style="color: grey">jdbc:sqlserver://{{server}}\{{port}}</i>
+    <p></p>
+    <a href="jdbc:sqlserver://{{server}}\{{port}}">
+      <button
+        class="btn-primary">
+        Test connection
+      </button>
+    </a>
+  </div>
+</div>

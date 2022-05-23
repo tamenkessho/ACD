@@ -1,0 +1,56 @@
+<div
+  class="additional">
+  Additional options
+  <input
+    [(ngModel)]="additionalOptions"
+    type="checkbox">
+  <form #thing="ngForm">
+    <p></p>
+    <fieldset
+      *ngIf="additionalOptions">
+      <legend>Connect via</legend>
+      <input
+        [(ngModel)]="currentStatus"
+        name="oracle"
+        type="radio"
+        value="SID"
+      >
+      SID
+      <input
+        [(ngModel)]="currentStatus"
+        name="oracle"
+        type="radio"
+        value="SERV"
+      >
+      Service name
+    </fieldset>
+    <h2></h2>
+    <input [(ngModel)]="server" name="server" type="text">
+    <input [(ngModel)]="port" name="port" type="text">
+    <input [(ngModel)]="dbname" name="DBname" type="text">
+    <p></p>
+    <hr>
+  </form>
+  <div *ngIf="currentStatus==='SID'">
+    <i
+      style="color: grey">jdbc:oracle:thin:@{{server}}:{{port}}:{{dbname}}</i>
+    <p></p>
+    <a href="jdbc:oracle:thin:@{{server}}:{{port}}:{{dbname}}">
+      <button
+        class="btn-primary">
+        Test connection
+      </button>
+    </a>
+  </div>
+  <div *ngIf="currentStatus==='SERV'">
+    <i
+      style="color: grey">jdbc:oracle:thin:@{{server}}:{{port}}/{{dbname}}</i>
+    <p></p>
+    <a href="jdbc:oracle:thin:@{{server}}:{{port}}/{{dbname}}">
+      <button
+        class="btn-primary">
+        Test connection
+      </button>
+    </a>
+  </div>
+</div>
